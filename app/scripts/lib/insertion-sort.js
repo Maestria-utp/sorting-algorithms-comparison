@@ -24,26 +24,4 @@
 
     return unsortedArray;
   };
-
-  //Private Property
-  var isHot = true;
-
-  //Public Property
-  sorting.ingredient = "Bacon Strips";
-
-  //Public Method
-  sorting.fry = function() {
-    var oliveOil;
-
-    addItem( "\t\n Butter \n\t" );
-    addItem( oliveOil );
-    console.log( "Frying " + sorting.ingredient );
-  };
-
-  //Private Method
-  function addItem( item ) {
-    if ( item !== undefined ) {
-      console.log( "Adding " + $.trim(item) );
-    }
-  }
 }( window.sorting = window.sorting || {} ));
