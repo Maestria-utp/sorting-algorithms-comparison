@@ -32,7 +32,7 @@
   sorting.buildMaxHeap = function (A) {
     var heapSize = A.length;
     for (var i = Math.floor(A.length / 2) ; i >= 0; i--) {
-      maxHeapify(A, i, heapSize);
+      sorting.maxHeapify(A, i, heapSize);
     };
   };
 
@@ -48,7 +48,7 @@
     return 2 * n + 2;
   };
 
-  var maxHeapify = function (A, i, heapSize) {
+  sorting.maxHeapify = function (A, i, heapSize) {
     var
       l = left(i),
       r = right(i),
@@ -66,7 +66,7 @@
       var tmp = A[i];
       A[i] = A[largest];
       A[largest] = tmp;
-      maxHeapify(A, largest, heapSize);
+      sorting.maxHeapify(A, largest, heapSize);
     }
   };
 
