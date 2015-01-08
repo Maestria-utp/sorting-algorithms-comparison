@@ -2,13 +2,6 @@
 
 (function( sorting, undefined ) {
 
-  // auxiliar array to use in the sorting
-  var auxiliarArray;
-
-  sorting.cleanMergeVariable = function() {
-    auxiliarArray = [];
-  };
-
   /**
   * Sort an array of integers by a merge technice, this algorithm have an order of O(n.log(n))
   * @param {array} unsortedArray to be sorted
@@ -17,22 +10,22 @@
   sorting.byMerge = function(unsortedArray) {
     var low = 0;
     var high = unsortedArray.length - 1;
-    auxiliarArray = unsortedArray.slice();
-    mergeSort(low, high);
+    var auxiliarArray = unsortedArray.slice();
+    mergeSort(auxiliarArray, low, high);
     return auxiliarArray;
   };
 
-  function mergeSort(low, high) {
+  function mergeSort(auxiliarArray, low, high) {
     if(low < high) {
       var mid = Math.floor((low + high) / 2);
 
-      mergeSort(low, mid);
-      mergeSort(mid + 1, high);
-      merge(low, mid, high);
+      mergeSort(auxiliarArray, low, mid);
+      mergeSort(auxiliarArray, mid + 1, high);
+      merge(auxiliarArray, low, mid, high);
     }
   }
 
-  function merge(low, mid, high) {
+  function merge(auxiliarArray, low, mid, high) {
     // calculate the lengths of the arrays
     var leftN = mid - low + 1;
     var rightN = high - mid;
