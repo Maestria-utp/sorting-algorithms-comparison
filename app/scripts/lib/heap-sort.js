@@ -2,6 +2,13 @@
 
 (function( sorting, undefined ) {
 
+  /**
+  *
+  * Sort an array with the binary heap strategy.
+  *
+  * @param {unsortedAray} array to be sorted
+  *
+  */
   sorting.byHeap = function(unsortedArray) {
     var auxiliarArray = unsortedArray.slice();
     heapSort(auxiliarArray);
