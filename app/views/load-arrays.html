@@ -2,7 +2,7 @@
 
 <div class="form-group">
   <label for="arrayFile">Archivo</label>
-  <input type="file" id="arrayFile" on-read-file="setFileContent($fileContent)">
+  <input type="file" id="arrayFile" on-read-file="$parent.arrayFile = $fileContent">
   <p class="help-block">Elija el archivo con el arreglo a cargar.</p>
 </div>
 <button class="btn btn-primary" ng-click="loadFile()">Cargar</button>

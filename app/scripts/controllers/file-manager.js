@@ -22,20 +22,16 @@ angular.module('sortinAlgorithmsComparisonApp')
     messagesManager.addMessage('info', 'El arreglo ha sido cargado.');
   };
 
-  $scope.setFileContent = function(content) {
-    $scope.arrayFile = content;
-  };
-
-  $scope.generateArray = function(size, max) {
+  $scope.generateArray = function() {
     var newArray = [];
-    console.log('inicio de generacion de arreglo, size: ' + size + ', maxNumber: ' + max);
-    for (var i = 0; i < size; i++) {
-      newArray.push(Math.floor(Math.random() * max));
+    console.log('inicio de generacion de arreglo, size: ' + $scope.size + ', maxNumber: ' + $scope.max);
+    for (var i = 0; i < $scope.size; i++) {
+      newArray.push(Math.floor(Math.random() * $scope.max));
     }
     console.log('fin de la generacion del arreglo');
     var object = {
-      size: size,
-      maxNumber: max,
+      size: $scope.size,
+      maxNumber: $scope.max,
       value: newArray
     };
 

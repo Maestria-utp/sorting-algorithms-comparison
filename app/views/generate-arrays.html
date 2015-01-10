@@ -2,10 +2,10 @@
 
 <div class="form-group">
   <label for="arraySize">Tamaño del arreglo</label>
-  <input type="number" class="form-control" id="arraySize" placeholder="100000" ng-model="size">
+  <input type="number" class="form-control" id="arraySize" placeholder="100000" ng-model="$parent.size">
 </div>
 <div class="form-group">
   <label for="maxNumber">L&iacute;mite superior para el arreglo</label>
-  <input type="number" class="form-control" id="maxNumber" placeholder="7000000" ng-model="max">
+  <input type="number" class="form-control" id="maxNumber" placeholder="7000000" ng-model="$parent.max">
 </div>
-<button class="btn btn-primary" ng-click="generateArray(size, max)">Generar</button>
+<button class="btn btn-primary" ng-click="generateArray()">Generar</button>
