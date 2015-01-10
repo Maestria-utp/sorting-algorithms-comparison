@@ -2,8 +2,16 @@
 <form>
   <div class="form-group">
     <label for="arrayFile">Archivo</label>
-    <input type="file" id="arrayFile">
+    <input type="file" id="arrayFile" on-read-file="setFileContent($fileContent)">
     <p class="help-block">Elija el archivo con el arreglo a cargar.</p>
   </div>
-  <button class="btn btn-primary">Cargar</button>
+  <button class="btn btn-primary" ng-click="loadFile()">Cargar</button>
 </form>
+
+<div ng-if="arrayFile">
+  <h2>Contenido del Archivo</h2>
+  <pre ng-show="arrayFile.length < 5000">{{arrayFile}}</pre>
+  <pre ng-show="arrayFile.length >= 5000">
+    El contenido es demasiado largo para ser mostrado.
+  </pre>
+</div>
