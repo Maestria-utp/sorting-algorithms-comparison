@@ -51,12 +51,42 @@
     return B;
   };
 
-  sorting.countingSort = function (array) {
+  var calculateMaxNumber = function(array) {
+    var max = 0;
+    for (var i = 0; i < array.length; i++) {
+      if(array[i] > max) {
+        max = array[i];
+      }
+    }
+
+    return max;
+  };
+
+  sorting.countingSort = function (unsortedArray) {
     // Es de 7 millones porque es el número máximo que puede tener
     // según lo especificado en el planteo del proyecto
-    var k = 7000000;
+    var k = calculateMaxNumber(unsortedArray);
     var B = [];
-    return countingSortOriginal(array, B, k);
+    var array = unsortedArray.slice();
+
+    // measure of the starting time
+    var startTime = performance.now();
+
+    var sortedArray = countingSortOriginal(array, B, k);
+
+    // measure of the starting time
+    var endTime = performance.now();
+
+    var n = array.length;
+    if(k > n) {
+      n = k;
+    }
+
+    return {
+      n: n,
+      time: endTime - startTime,
+      value: sortedArray
+    };
   };
 
 }( window.sorting = window.sorting || {} ));
