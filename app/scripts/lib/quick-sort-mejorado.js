@@ -67,9 +67,22 @@
     }
   };
 
-  sorting.quickSortMejorado = function (array) {
+  sorting.quickSortMejorado = function (unsortedArray) {
+    var array = unsortedArray.slice();
+
+    // measure of the starting time
+    var startTime = performance.now();
+
     randomizedQuickSort(array, 0, array.length - 1);
-    console.log('Arreglo ordenado');
+
+    // measure of the starting time
+    var endTime = performance.now();
+
+    return {
+      n: array.length,
+      time: endTime - startTime,
+      value: array
+    };
   };
 
 }( window.sorting = window.sorting || {} ));
