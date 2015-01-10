@@ -70,7 +70,12 @@
     }
   };
 
-  sorting.heapinsertSort = function (array) {
+  sorting.heapinsertSort = function (unsortedArray) {
+    var array = unsortedArray.slice();
+
+    // measure of the starting time
+    var startTime = performance.now();
+
     sorting.buildMaxHeap(array);
     for (var i = 0; i < Math.floor(array.length / 2); i++) {
       // Se corrige el 0 index accediendo el elemento en [array.length - i - 1]
@@ -78,8 +83,17 @@
       array[i] = array[array.length - i - 1];
       array[array.length - i - 1] = tmp;
     };
-    sorting.byInsertion(array);
-    console.log('arreglo ordenado')
+
+    // measure of the starting time
+    var endTime = performance.now();
+
+    var byInsertion = sorting.byInsertion(array).value;
+
+    return {
+      n: array.length,
+      time: endTime - startTime,
+      value: byInsertion
+    };
   };
 
 }( window.sorting = window.sorting || {} ));
