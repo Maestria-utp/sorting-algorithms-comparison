@@ -1,0 +1,23 @@
+<div ng-controller="FileManagerCtrl">
+  <ul class="nav nav-tabs">
+    <li role="presentation" ng-click="tab = 1" ng-class="{'active': activeTab(1)}">
+      <a>Home</a>
+    </li>
+    <li role="presentation" ng-click="tab = 2" ng-class="{'active': activeTab(2)}">
+      <a>Profile</a>
+    </li>
+    <li role="presentation" ng-click="tab = 3" ng-class="{'active': activeTab(3)}">
+      <a>Messages</a>
+    </li>
+  </ul>
+
+  <div ng-include src="'views/loaded-arrays.html'" ng-show="activeTab(1)">
+  </div>
+
+  <div ng-include src="'views/load-arrays.html'" ng-show="activeTab(2)">
+  </div>
+
+  <div ng-include src="'views/generate-arrays.html'" ng-show="activeTab(3)">
+  </div>
+
+</div>

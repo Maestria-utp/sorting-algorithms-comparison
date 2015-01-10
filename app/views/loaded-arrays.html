@@ -1,0 +1,30 @@
+<h1>Arreglos cargados</h1>
+<div ng-show="arrays.length === 0">
+  No hay arreglos cargados.
+</div>
+<table class="table table-striped" ng-show="arrays.length > 0">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Tamaño</td>
+      <td>N&uacute;mero mayor</td>
+      <td>Eliminar</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="array in arrays">
+      <td>{{$index}}</td>
+      <td>
+        {{array.size | number}}
+      </td>
+      <td>
+        {{array.maxNumber | number}}
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" ng-click="removeArrayAt($index)">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
