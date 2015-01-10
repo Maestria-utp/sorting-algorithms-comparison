@@ -15,8 +15,19 @@
     var low = 0;
     var high = unsortedArray.length - 1;
     var auxiliarArray = unsortedArray.slice();
+
+    // measure of the starting time
+    var startTime = performance.now();
+
     mergeSortOptimized(auxiliarArray, low, high);
-    return auxiliarArray;
+
+    // measure of the ending time
+    var endTime = performance.now();
+    return {
+      n: auxiliarArray.length,
+      time: endTime - startTime,
+      value: auxiliarArray
+    };
   };
 
   function mergeSortOptimized(auxiliarArray, low, high) {
