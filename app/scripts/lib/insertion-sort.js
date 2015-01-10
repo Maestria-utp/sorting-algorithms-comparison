@@ -12,6 +12,11 @@
   * @return {array} sorted array
   */
   sorting.byInsertion = function(unsortedArray) {
+    unsortedArray = unsortedArray.slice();
+
+    // measure of the starting time
+    var startTime = performance.now();
+
     var length = unsortedArray.length;
     for(var j = 1; j < length; j++) {
       var key = unsortedArray[j];
@@ -24,6 +29,13 @@
       unsortedArray[i + 1] = key;
     }
 
-    return unsortedArray;
+    // measure of the ending time
+    var endTime = performance.now();
+
+    return {
+      n: length,
+      time: endTime - startTime,
+      value: unsortedArray
+    };
   };
 }( window.sorting = window.sorting || {} ));

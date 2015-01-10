@@ -1,0 +1,30 @@
+<div ng-controller="ResultsCtrl">
+  <h1>Tabla de resultados</h1>
+  <div ng-show="results.length === 0">
+    <pre>No hay resultados generados.</pre>
+  </div>
+  <div ng-show="results.length > 0">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>#</td>
+          <td>Algoritmo</td>
+          <td>Entrada(n)</td>
+          <td>Tiempo real(milisegungos)</td>
+          <td>Complejidad</td>
+          <td>Factor constante(milisegundos)</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="result in results">
+          <td>{{$index}}</td>
+          <td>{{result.name}}</td>
+          <td>{{result.n | number}}</td>
+          <td>{{result.time | number:6}}</td>
+          <td>{{result.bigO + ' - ' + (result.complexity | number) }}</td>
+          <td>{{result.constantFactor | number:10}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
