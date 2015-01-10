@@ -11,8 +11,20 @@
   */
   sorting.byHeap = function(unsortedArray) {
     var auxiliarArray = unsortedArray.slice();
+
+    // measure of the starting time
+    var startTime = performance.now();
+
     heapSort(auxiliarArray);
-    return auxiliarArray;
+
+    // measure of the starting time
+    var endTime = performance.now();
+
+    return {
+      n: auxiliarArray.length,
+      time: endTime - startTime,
+      value: auxiliarArray
+    };
   };
 
   function heapSort(auxiliarArray) {
