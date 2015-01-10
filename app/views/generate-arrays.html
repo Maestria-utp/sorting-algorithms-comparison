@@ -1,12 +1,11 @@
 <h1>Generar arreglos</h1>
-<form>
-  <div class="form-group">
-    <label for="arraySize">Tamaño del arreglo</label>
-    <input type="number" class="form-control" id="arraySize" placeholder="100000" ng-model="newArraySize">
-  </div>
-  <div class="form-group">
-    <label for="newArrayMaxNumber">L&iacute;mite superior para el arreglo</label>
-    <input type="number" class="form-control" id="newArrayMaxNumber" placeholder="7000000" ng-model="newArrayMaxNumber">
-  </div>
-  <button class="btn btn-primary" ng-click="generateArray()">Generar</button>
-</form>
+
+<div class="form-group">
+  <label for="arraySize">Tamaño del arreglo</label>
+  <input type="number" class="form-control" id="arraySize" placeholder="100000" ng-model="size">
+</div>
+<div class="form-group">
+  <label for="maxNumber">L&iacute;mite superior para el arreglo</label>
+  <input type="number" class="form-control" id="maxNumber" placeholder="7000000" ng-model="max">
+</div>
+<button class="btn btn-primary" ng-click="generateArray(size, max)">Generar</button>
