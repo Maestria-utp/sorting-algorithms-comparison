@@ -11,7 +11,7 @@
     <label for="array">Arreglo a usar</label>
     <select id="array" class="form-control"
       ng-model="array"
-      ng-options="arrays.indexOf(array) + ', tamaño: ' + (array.size | number) for array in arrays">
+      ng-options="arrays.indexOf(array) + ', tamaño: ' + (array.size | number) + ', número mayor: ' + (array.maxNumber | number) for array in arrays">
     </select>
   </div>
   <button class="btn btn-primary" ng-click="executeAlgorithm()">Ejecutar</button>
