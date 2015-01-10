@@ -2,43 +2,65 @@
 
 angular.module('sortinAlgorithmsComparisonApp')
   .controller('AlgorithmCrtl', function($scope) {
+    var quadraticOrder = function(n) {
+      return n*n;
+    }
+
+    var nlognOrder = function(n) {
+      return n * Math.log(n);
+    }
+
     $scope.arrays = arrays.loadedArrays;
     $scope.algorithms = [
       {
         name: "Insertion Sort",
         execute: sorting.byInsertion,
         bigO: 'n^2',
-        calculateComplexity: function(n) {
-          return n*n;
-        }
+        calculateComplexity: quadraticOrder
       }, 
       {
         name: "Heap insert sort",
         execute: sorting.heapinsertSort,
+        bigO: 'n^2',
+        calculateComplexity: quadraticOrder
       }, 
       {
         name: "Merge sort",
         execute: sorting.byMerge,
+        bigO: 'n log(n)',
+        calculateComplexity: nlognOrder
       }, 
       {
         name: "Merge sort mejorado",
-        execute: sorting.byMergeOptimized
+        execute: sorting.byMergeOptimized,
+        bigO: 'n log(n)',
+        calculateComplexity: nlognOrder
       }, 
       {
         name: "Heap sort",
-        execute: sorting.byHeap
+        execute: sorting.byHeap,
+        bigO: 'n log(n)',
+        calculateComplexity: nlognOrder
       }, 
       {
         name: "Quick sort",
-        execute: sorting.quickSort
+        execute: sorting.quickSort,
+        bigO: 'n log(n)',
+        calculateComplexity: nlognOrder
       }, 
       {
         name: "Quick sort aleatorio",
-        execute: sorting.quickSortMejorado
+        execute: sorting.quickSortMejorado,
+        bigO: 'n log(n)',
+        calculateComplexity: nlognOrder
       }, 
       {
         name: "Counting sort",
-        execute: sorting.countingSort
+        execute: sorting.countingSort,
+        bigO: 'n',
+        calculateComplexity: function(n) {
+          return n
+        }
       }
     ];
     $scope.algorithm = $scope.algorithms[0];
