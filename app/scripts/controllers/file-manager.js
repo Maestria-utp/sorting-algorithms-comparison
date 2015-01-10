@@ -13,4 +13,8 @@ angular.module('sortinAlgorithmsComparisonApp')
     console.log("removiendo arreglo");
     arrays.removeArrayAt(index);
   };
+
+  $scope.generateArray = function() {
+    messagesManager.addMessage('info', 'El arreglo ha sido creado.');
+  };
 });

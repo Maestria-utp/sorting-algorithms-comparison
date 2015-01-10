@@ -1,3 +1,10 @@
+<div ng-controller="messagesCtrl">
+  <div ng-repeat="message in messages" manager class="alert alert-{{message.type}}" role="alert">
+    {{message.value}}.
+  </div>
+</div>
+
+
 <div ng-include src="'views/file-manager-view.html'">
 </div>
 
