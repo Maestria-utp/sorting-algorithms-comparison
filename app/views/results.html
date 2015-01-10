@@ -11,6 +11,7 @@
           <td>Algoritmo</td>
           <td>Entrada(n)</td>
           <td>Tiempo real(milisegungos)</td>
+          <td>O grande</td>
           <td>Complejidad</td>
           <td>Factor constante(milisegundos)</td>
         </tr>
@@ -21,7 +22,8 @@
           <td>{{result.name}}</td>
           <td>{{result.n | number}}</td>
           <td>{{result.time | number:6}}</td>
-          <td>{{result.bigO + ' - ' + (result.complexity | number) }}</td>
+          <td>{{result.bigO}}</td>
+          <td>{{result.complexity | number}}</td>
           <td>{{result.constantFactor | number:10}}</td>
         </tr>
       </tbody>
