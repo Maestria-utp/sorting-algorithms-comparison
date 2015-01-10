@@ -1,4 +1,4 @@
-<div ng-controller="messagesCtrl">
+<div ng-controller="MessagesCtrl">
   <div ng-repeat="message in messages" manager class="alert alert-dismissible alert-{{message.type}}" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     {{message.value}}
@@ -7,6 +7,9 @@
 
 
 <div ng-include src="'views/file-manager-view.html'">
+</div>
+
+<div ng-include src="'views/algorithm-form.html'">
 </div>
 
 <div class="jumbotron">

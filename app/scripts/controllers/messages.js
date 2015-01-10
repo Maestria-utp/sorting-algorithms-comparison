@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('sortinAlgorithmsComparisonApp')
-.controller('messagesCtrl', function ($scope) {
+.controller('MessagesCtrl', function ($scope) {
   $scope.messages = messagesManager.values;
 });
