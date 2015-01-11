@@ -79,3 +79,30 @@ a {
     border-bottom: 0;
   }
 }
+
+/* the styles for the graph */
+#graph .name {
+    float:right;
+    color:#27aae1;
+}
+#graph .axis {
+    fill: none;
+    stroke: #AAA;
+    stroke-width: 1px;
+}
+#graph text {
+    stroke: none;
+    fill: #666666;
+    font-size: .6em;
+    font-family:"Helvetica Neue"
+}
+#graph .label {
+    fill: #414241;
+}
+#graph .node {
+    cursor:pointer;
+}
+#graph .dot {
+    opacity: .7;
+    cursor: pointer;
+}

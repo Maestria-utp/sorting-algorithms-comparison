@@ -1,5 +1,8 @@
 'use strict';
 
+// setup of gogle charts
+google.load('visualization', '1.0', {'packages':['corechart']});
+
 /**
  * @ngdoc overview
  * @name sortinAlgorithmsComparisonApp
