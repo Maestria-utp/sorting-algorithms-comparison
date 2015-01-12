@@ -2,23 +2,7 @@
 
 (function( arrays, undefined ) {
 
-  arrays.loadedArrays = [
-    {
-      size: 10000000,
-      maxNumber: 7000000,
-      value: [10,4,2,6,0]
-    },
-    {
-      size: 20000000,
-      maxNumber: 5000000,
-      value: [10,4,2,6,0]
-    },
-    {
-      size: 30000000,
-      maxNumber: 6000000,
-      value: [10,4,2,6,0]
-    }
-  ];
+  arrays.loadedArrays = [];
 
   arrays.removeArrayAt = function(index) {
     arrays.loadedArrays.splice(index, 1);

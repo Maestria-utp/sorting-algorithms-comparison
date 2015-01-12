@@ -23,6 +23,12 @@ angular.module('sortinAlgorithmsComparisonApp')
   };
 
   $scope.generateArray = function() {
+    // validation of the inputs
+    if(typeof $scope.size != 'number' || typeof $scope.max != 'number') {
+      messagesManager.addMessage('danger', 'Las entradas para generar el arreglo no son válidas.');
+      return;
+    }
+
     var newArray = [];
     console.log('inicio de generacion de arreglo, size: ' + $scope.size + ', maxNumber: ' + $scope.max);
     for (var i = 0; i < $scope.size; i++) {

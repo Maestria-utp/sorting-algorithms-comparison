@@ -4,86 +4,92 @@ angular.module('sortinAlgorithmsComparisonApp')
   .controller('AlgorithmCrtl', function($scope) {
     var quadraticOrder = function(n) {
       return n*n;
-    }
+    };
 
     var nlognOrder = function(n) {
       return n * Math.log(n);
-    }
+    };
 
     $scope.arrays = arrays.loadedArrays;
     $scope.algorithms = [
       {
-        name: "Insertion Sort",
+        name: 'Insertion Sort',
         execute: sorting.byInsertion,
         bigO: 'n^2',
         calculateComplexity: quadraticOrder
-      }, 
+      },
       {
-        name: "Heap insert sort",
+        name: 'Heap insert sort',
         execute: sorting.heapinsertSort,
         bigO: 'n^2',
         calculateComplexity: quadraticOrder
-      }, 
+      },
       {
-        name: "Merge sort",
+        name: 'Merge sort',
         execute: sorting.byMerge,
         bigO: 'n log(n)',
         calculateComplexity: nlognOrder
-      }, 
+      },
       {
-        name: "Merge sort mejorado",
+        name: 'Merge sort mejorado',
         execute: sorting.byMergeOptimized,
         bigO: 'n log(n)',
         calculateComplexity: nlognOrder
-      }, 
+      },
       {
-        name: "Heap sort",
+        name: 'Heap sort',
         execute: sorting.byHeap,
         bigO: 'n log(n)',
         calculateComplexity: nlognOrder
-      }, 
+      },
       {
-        name: "Quick sort",
+        name: 'Quick sort',
         execute: sorting.quickSort,
         bigO: 'n log(n)',
         calculateComplexity: nlognOrder
-      }, 
+      },
       {
-        name: "Quick sort aleatorio",
+        name: 'Quick sort aleatorio',
         execute: sorting.quickSortMejorado,
         bigO: 'n log(n)',
         calculateComplexity: nlognOrder
-      }, 
+      },
       {
-        name: "Counting sort",
+        name: 'Counting sort',
         execute: sorting.countingSort,
         bigO: 'n',
         calculateComplexity: function(n) {
-          return n
+          return n;
         }
       }
     ];
     $scope.algorithm = $scope.algorithms[0];
 
     $scope.executeAlgorithm = function() {
-        console.log("Ejecucion de algoritmo: " 
-          + $scope.algorithm.name
-          + ", con el arreglo de tamaño: "
-          + $scope.array.size
-        );
+      // validation of inputs
+      if($scope.array === undefined) {
+        messagesManager.addMessage('danger', 'Por favor seleccione un arreglo de entrada.');
+        return;
+      }
 
-        // execution of algorithm
-        var result = $scope.algorithm.execute($scope.array.value);
-        console.log("Fin de la ejecucion del algoritmo");
+      console.log("Ejecucion de algoritmo: "
+        + $scope.algorithm.name
+        + ", con el arreglo de tamaño: "
+        + $scope.array.size
+      );
 
-        // complete the other properties
-        result.name = $scope.algorithm.name;
-        result.bigO = $scope.algorithm.bigO;
-        result.complexity = $scope.algorithm.calculateComplexity(result.n);
-        result.constantFactor = result.time / result.complexity;
+      // execution of algorithm
+      var result = $scope.algorithm.execute($scope.array.value);
+      console.log("Fin de la ejecucion del algoritmo");
 
-        // add new result to the table of results
-        resultsManager.addResult(result);
-        messagesManager.addMessage('info', 'El arreglo ha sido ordenado.');
+      // complete the other properties
+      result.name = $scope.algorithm.name;
+      result.bigO = $scope.algorithm.bigO;
+      result.complexity = $scope.algorithm.calculateComplexity(result.n);
+      result.constantFactor = result.time / result.complexity;
+
+      // add new result to the table of results
+      resultsManager.addResult(result);
+      messagesManager.addMessage('info', 'El arreglo ha sido ordenado.');
     };
 });
