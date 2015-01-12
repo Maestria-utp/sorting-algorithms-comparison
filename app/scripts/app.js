@@ -2,6 +2,14 @@
 
 // setup of gogle charts
 google.load('visualization', '1.0', {'packages':['corechart']});
+window.loadingScreen = window.pleaseWait({
+  logo: "images/yeoman.png",
+  backgroundColor: '#5bc0de',
+  loadingHtml: '<div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div><p class="white"><b>Cargando...</b> Por favor espere.</p>'
+});
+google.setOnLoadCallback(function() {
+  window.loadingScreen.finish();
+});
 
 /**
  * @ngdoc overview

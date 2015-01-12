@@ -29,6 +29,13 @@ angular.module('sortinAlgorithmsComparisonApp')
       return;
     }
 
+    // initialize the loading screen
+    window.loadingScreen = window.pleaseWait({
+      logo: "images/yeoman.png",
+      backgroundColor: '#5bc0de',
+      loadingHtml: '<div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div><p class="white"><b>Generando arreglo...</b> por favor espere.</p>'
+    });
+
     var newArray = [];
     console.log('inicio de generacion de arreglo, size: ' + $scope.size + ', maxNumber: ' + $scope.max);
     for (var i = 0; i < $scope.size; i++) {
@@ -44,5 +51,8 @@ angular.module('sortinAlgorithmsComparisonApp')
     arrays.loadedArrays.push(object);
     $scope.tab = 1;
     messagesManager.addMessage('info', 'El arreglo ha sido creado.');
+
+    // dispose the loading screen
+    window.loadingScreen.finish();
   };
 });

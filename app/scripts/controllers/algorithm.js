@@ -72,6 +72,13 @@ angular.module('sortinAlgorithmsComparisonApp')
         return;
       }
 
+      // open the loading screen
+      window.loadingScreen = window.pleaseWait({
+        logo: "images/yeoman.png",
+        backgroundColor: '#5bc0de',
+        loadingHtml: '<div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div><p class="white"><b>Ordenando el arreglo...</b> Por favor espere.</p>'
+      });
+
       console.log("Ejecucion de algoritmo: "
         + $scope.algorithm.name
         + ", con el arreglo de tamaño: "
@@ -91,5 +98,8 @@ angular.module('sortinAlgorithmsComparisonApp')
       // add new result to the table of results
       resultsManager.addResult(result);
       messagesManager.addMessage('info', 'El arreglo ha sido ordenado.');
+
+      //dispose the loading screen
+      window.loadingScreen.finish();
     };
 });
