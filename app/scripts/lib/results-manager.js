@@ -25,7 +25,8 @@
   };
 
   resultsManager.removeResultAt = function(index) {
-    resultsManager.splice(index, 1);
+    resultsManager.results.splice(index, 1);
+    resultsManager.drawChart();
   };
 
   resultsManager.drawChart = function() {

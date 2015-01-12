@@ -33,7 +33,7 @@ body {
 
 /* Customize container */
 @media (min-width: 768px) {
-  
+
 }
 .container-narrow > hr {
   margin: 30px 0;
@@ -105,4 +105,10 @@ a {
 #graph .dot {
     opacity: .7;
     cursor: pointer;
+}
+
+/* styles for the sweetalert */
+div.sweet-alert p{
+  overflow: scroll;
+  max-height: 500px;
 }
