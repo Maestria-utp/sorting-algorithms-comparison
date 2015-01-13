@@ -15,7 +15,7 @@ angular.module('sortinAlgorithmsComparisonApp')
       name: 'Juan Pablo',
       lastName: 'Ramirez',
       githubUsername: 'juanprq',
-      gitHubProfileUrl: 'https://github.com/juanprq',
+      githubProfileUrl: 'https://github.com/juanprq',
       identification: '1094.891.516',
       email: 'juan.ramirez.q@gmail.com',
       proffesion: 'Ingeniero de sistemas y computación',
@@ -24,6 +24,8 @@ angular.module('sortinAlgorithmsComparisonApp')
     {
       name: 'Santiago',
       lastName: 'Rodriguez',
+      githubUsername: 'sanrodari',
+      githubProfileUrl: 'https://github.com/sanrodari',
       identification: '',
       email: 'sanrodari@gmail.com',
       proffesion: 'Ingeniero de sistemas y computación',
