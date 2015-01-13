@@ -84,10 +84,10 @@
       array[array.length - i - 1] = tmp;
     };
 
+    var byInsertion = sorting.byInsertion(array).value;
+
     // measure of the starting time
     var endTime = performance.now();
-
-    var byInsertion = sorting.byInsertion(array).value;
 
     return {
       n: array.length,
