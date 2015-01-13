@@ -18,6 +18,15 @@
 <div id="byte_range"></div>
 <div id="byte_content"></div>
 
+<script src="insertion-sort.js"></script>
+<script src="heapinsert-sort.js"></script>
+<script src="merge-sort.js"></script>
+<script src="merge-sort-optimized.js"></script>
+<script src="heap-sort.js"></script>
+<script src="quick-sort.js"></script>
+<script src="quick-sort-mejorado.js"></script>
+<script src="counting-sort.js"></script>
+
 <script>
   function readBlob(opt_startByte, opt_stopByte) {
 
@@ -36,7 +45,6 @@
     // If we use onloadend, we need to check the readyState.
     reader.onloadend = function(evt) {
       if (evt.target.readyState == FileReader.DONE) { // DONE == 2
-        document.getElementById('byte_content').textContent = evt.target.result;
         document.getElementById('byte_range').textContent =
             ['Read bytes: ', start + 1, ' - ', stop + 1,
              ' of ', file.size, ' byte file'].join('');
