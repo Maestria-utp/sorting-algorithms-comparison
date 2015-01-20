@@ -74,7 +74,7 @@ angular.module('sortinAlgorithmsComparisonApp')
 
       // open the loading screen
       window.loadingScreen = window.pleaseWait({
-        logo: "images/yeoman.png",
+        logo: "images/logo.png",
         backgroundColor: '#5bc0de',
         loadingHtml: '<div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div><p class="white"><b>Ordenando el arreglo...</b> Por favor espere.</p>'
       });
