@@ -28,6 +28,13 @@ La aplicación se encuentra desplegada en github pages y cualquier persona puede
 Dependencias
 ---
 
+Para poder ejecutar la aplicación de manera local se necesita la previa instalación de las siguientes aplicaciones:
+
+* git: Para clonar el repositorio con el código fuente.
+* node.js: Para correr los paquetes de dependencias y servidor de la aplicación.
+* grunt: Paquete de node.js que sirve para ejecutar todas las tareas de automatización del proyecto.
+* bower: Paquete de node.js que realiza la gestión de dependencias javascript para el proyecto como angular.js y underscore.js.
+
 Código fuente
 ---
 
@@ -37,12 +44,7 @@ Para descargar el código fuente de la aplicación se debe  realizar el clon del
 git clone https://github.com/Maestria-utp/sorting-algorithms-comparison.git
 ```
 
-Para poder ejecutar la aplicación de manera local se necesitan la previa instalación de las siguientes aplicacones:
-
- * git: Para clonar el respositorio con el código fuente.
- * node.js: Para correr los paquetes de dependencias y dervidor de la aplicación.
- * grunt: Paquete de node.js que sirve para ejecutar todas las tareas de automatización del proyecto.
- * bower: Paquete de node.js que realiza la gestión de dependencias javascript para el proyecto como angular.js y underscore.js.
+Los algoritmos se encuentra implementados en la carpeta *app/lib* y allí se encuentra cada archivo con el nombre del algoritmo que implementa.
 
 Instalación
 ---
@@ -59,7 +61,22 @@ Para finalizar se ejecuta el la tarea grunt para levantar un servidor y así pod
 grunt serve
 ```
 
-Este comando abre deberá abrir el navegador por defecto y en [http://localhost:9000](http://localhost:9000) con la aplicación cargada.
+Este comando deberá abrir el navegador por defecto y en [http://localhost:9000](http://localhost:9000) con la aplicación cargada.
+
+Carga de archivos
+---
+
+La carga de archivos con arreglos se realiza mediante la segunda pestaña *Cargar arreglos*, para ello se debe tener un archivo de texto con el siguiente formato:
+
+```json
+{
+  "size": 10,
+  "maxNumber": 20,
+  "value": [20, 6 ,4 ,7, 15, 2, 12, 10, 9, 5]
+}
+```
+
+Una vez seleccionado el archivo la aplicación mostrara una vista previa siempre y cuando este no sea muy grande, luego se presiona el botón cargar y el arreglo aparecerá en la pestaña de arreglos cargados.
 
 Funcionamiento
 ---
