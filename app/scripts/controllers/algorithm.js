@@ -7,7 +7,7 @@ angular.module('sortinAlgorithmsComparisonApp')
     };
 
     var nlognOrder = function(n) {
-      return n * Math.log(n);
+      return n * Math.log10(n);
     };
 
     $scope.arrays = arrays.loadedArrays;
